@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imersão O Mercado Invisível</title>
+  <meta name="description" content="Descubra a profissão home office que está permitindo mulheres comuns conquistarem uma renda de R$3.000 a R$6.000 por mês trabalhando de casa." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink: #FF4F9A;
+      --pink-light: #FF7AB5;
+      --pink-glow: rgba(255, 79, 154, 0.35);
+      --pink-soft: rgba(255, 79, 154, 0.08);
+      --black: #080808;
+      --black-2: #111111;
+      --black-3: #181818;
+      --black-4: #222222;
+      --white: #FFFFFF;
+      --white-80: rgba(255,255,255,0.80);
+      --white-60: rgba(255,255,255,0.60);
+      --white-30: rgba(255,255,255,0.30);
+      --white-10: rgba(255,255,255,0.07);
+      --border: rgba(255,255,255,0.09);
+      --border-pink: rgba(255, 79, 154, 0.25);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── UTILS ── */
+    .container { width: 100%; max-width: 720px; margin: 0 auto; padding: 0 20px; }
+    .container-lg { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+    .pink { color: var(--pink); }
+    .serif { font-family: 'Playfair Display', serif; }
+
+    /* ── HEADER BAR ── */
+    .header-bar {
+      background: linear-gradient(135deg, var(--pink) 0%, #C4006F 100%);
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 24px var(--pink-glow);
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      border-bottom: 1px solid var(--border);
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .navbar-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--white);
+    }
+    .navbar-logo span { color: var(--pink); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 72px 0 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,79,154,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-block;
+      border: 1px solid var(--border-pink);
+      background: var(--pink-soft);
+      color: var(--pink-light);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      padding: 7px 18px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 5vw, 42px);
+      font-weight: 800;
+      line-height: 1.22;
+      margin-bottom: 24px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--pink);
+    }
+
+    .hero-sub {
+      font-size: clamp(15px, 2.5vw, 17px);
+      color: var(--white-80);
+      line-height: 1.75;
+      max-width: 580px;
+      margin: 0 auto 36px;
+    }
+
+    /* VSL */
+    .vsl-box {
+      background: var(--black-3);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 0 auto 36px;
+      max-width: 640px;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 40px var(--pink-glow);
+    }
+    .vsl-ratio {
+      position: relative;
+      padding-bottom: 56.25%;
+      background: #0d0d0d;
+    }
+    .vsl-ratio iframe,
+    .vsl-ratio video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+    .vsl-placeholder {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 12px;
+    }
+    .vsl-play {
+      width: 70px; height: 70px;
+      background: var(--pink);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 30px var(--pink-glow);
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .vsl-play:hover { transform: scale(1.08); box-shadow: 0 0 50px var(--pink-glow); }
+    .vsl-play svg { margin-left: 5px; }
+    .vsl-caption { font-size: 13px; color: var(--white-60); }
+
+    /* Event info */
+    .event-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px 28px;
+      margin-bottom: 36px;
+    }
+    .event-info-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--white-80);
+    }
+    .event-info-item span.emoji { font-size: 16px; }
+
+    /* BUTTONS */
+    .btn-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--pink) 0%, #C4006F 100%);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      border-radius: 100px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 32px var(--pink-glow);
+      transition: transform .2s, box-shadow .2s;
+      width: 100%;
+      max-width: 400px;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 44px var(--pink-glow);
+    }
+    .btn-secondary {
+      display: inline-block;
+      border: 1.5px solid var(--border-pink);
+      color: var(--pink-light);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .8px;
+      padding: 13px 32px;
+      border-radius: 100px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+      background: transparent;
+    }
+    .btn-secondary:hover {
+      background: var(--pink-soft);
+      color: var(--pink);
+    }
+
+    .microcopy {
+      font-size: 12px;
+      color: var(--white-60);
+      margin-top: 12px;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 80px 0; }
+    section + section { border-top: 1px solid var(--border); }
+
+    .section-badge {
+      display: inline-block;
+      color: var(--pink);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 4.5vw, 36px);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 16px;
+      color: var(--white-80);
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    /* ── SECTION 2: PROVAS ── */
+    .social-proof { text-align: center; background: var(--black-2); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .testimonial-card {
+      background: var(--black-3);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+    .testimonial-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--pink), transparent);
+    }
+
+    .testimonial-video {
+      background: #0d0d0d;
+      border-radius: 10px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .testimonial-video-play {
+      width: 52px; height: 52px;
+      background: var(--pink);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 20px var(--pink-glow);
+    }
+
+    .testimonial-placeholder {
+      background: var(--black-4);
+      border: 1px dashed var(--border-pink);
+      border-radius: 10px;
+      height: 160px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      color: var(--white-30);
+      font-size: 12px;
+    }
+
+    .testimonial-name {
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .testimonial-text {
+      font-size: 14px;
+      color: var(--white-80);
+      font-style: italic;
+      line-height: 1.65;
+    }
+
+    .bullets-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: left;
+    }
+    .bullet-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--white-80);
+    }
+    .bullet-check {
+      color: var(--pink);
+      font-weight: 800;
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── SECTION 3: PROBLEMA ── */
+    .problem-section { background: var(--black); }
+
+    .problem-copy {
+      font-size: 17px;
+      color: var(--white-80);
+      line-height: 2;
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+    .problem-copy strong {
+      color: var(--white);
+      font-weight: 700;
+    }
+    .problem-copy .break {
+      display: block;
+      height: 8px;
+    }
+
+    .insight-box {
+      background: var(--black-3);
+      border: 1px solid var(--border-pink);
+      border-radius: 16px;
+      padding: 28px 24px;
+      margin: 32px auto;
+      max-width: 560px;
+      text-align: center;
+    }
+    .insight-box p {
+      font-size: 15px;
+      color: var(--white-80);
+      line-height: 1.8;
+    }
+    .insight-box strong {
+      color: var(--pink);
+    }
+
+    .problem-callout {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--white-80);
+      line-height: 1.75;
+      text-align: center;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+    .problem-callout em {
+      color: var(--pink);
+      font-style: normal;
+    }
+
+    /* ── SECTION 4: DESCUBRA ── */
+    .discover-section { background: var(--black-2); }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .discover-card {
+      background: var(--black-3);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .25s, box-shadow .25s;
+    }
+    .discover-card:hover {
+      border-color: var(--border-pink);
+      box-shadow: 0 8px 32px rgba(255,79,154,0.12);
+    }
+    .discover-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--pink), transparent);
+      opacity: 0;
+      transition: opacity .25s;
+    }
+    .discover-card:hover::after { opacity: 1; }
+
+    .card-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px; height: 38px;
+      background: var(--pink-soft);
+      border: 1px solid var(--border-pink);
+      border-radius: 50%;
+      color: var(--pink);
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    .card-title {
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .card-text {
+      font-size: 14px;
+      color: var(--white-80);
+      line-height: 1.7;
+    }
+
+    .resultado-grid {
+      background: var(--black-3);
+      border: 1px solid var(--border-pink);
+      border-radius: 20px;
+      padding: 32px 24px;
+      box-shadow: 0 0 40px rgba(255,79,154,0.08);
+    }
+    .resultado-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .resultado-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 16px;
+    }
+    .resultado-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--white-80);
+    }
+    .resultado-item .check { color: var(--pink); font-weight: 800; }
+
+    /* ── SECTION 5: EVENTO ── */
+    .event-section { background: var(--black); }
+
+    .modules-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .module-item {
+      display: flex;
+      gap: 20px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .module-item:last-child { border-bottom: none; }
+    .module-number {
+      flex-shrink: 0;
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--pink) 0%, #C4006F 100%);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800;
+      font-size: 15px;
+      box-shadow: 0 4px 16px var(--pink-glow);
+    }
+    .module-content {}
+    .module-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 6px;
+    }
+    .module-title {
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .module-desc {
+      font-size: 14px;
+      color: var(--white-60);
+      line-height: 1.65;
+    }
+
+    /* ── SECTION 6: PARA QUEM ── */
+    .forwhom-section { background: var(--black-2); }
+
+    .forwhom-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .forwhom-card {
+      border-radius: 16px;
+      padding: 28px 24px;
+    }
+    .forwhom-yes {
+      background: rgba(255,79,154,0.06);
+      border: 1px solid var(--border-pink);
+    }
+    .forwhom-no {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+    }
+    .forwhom-label {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .forwhom-yes .forwhom-label { color: var(--pink); }
+    .forwhom-no .forwhom-label { color: var(--white-60); }
+
+    .forwhom-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--white-80);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .forwhom-item:last-child { border-bottom: none; }
+    .forwhom-icon-yes { color: var(--pink); font-weight: 800; }
+    .forwhom-icon-no { color: var(--white-30); }
+
+    /* ── SECTION 7: RECEBE ── */
+    .bonus-section { background: var(--black); }
+
+    .bonus-list {
+      background: var(--black-3);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .bonus-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      transition: background .2s;
+    }
+    .bonus-item:last-child { border-bottom: none; }
+    .bonus-item:hover { background: var(--pink-soft); }
+    .bonus-icon {
+      flex-shrink: 0;
+      width: 36px; height: 36px;
+      background: var(--pink-soft);
+      border: 1px solid var(--border-pink);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .bonus-text {}
+    .bonus-name {
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+    .bonus-desc {
+      font-size: 13px;
+      color: var(--white-60);
+    }
+
+    /* ── SECTION 8: INVESTIMENTO ── */
+    .pricing-section { background: var(--black-2); text-align: center; }
+
+    .pricing-strike {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .strike-item {
+      font-size: 15px;
+      color: var(--white-30);
+      text-decoration: line-through;
+    }
+
+    .pricing-box {
+      background: var(--black);
+      border: 1px solid var(--border-pink);
+      border-radius: 24px;
+      padding: 40px 28px;
+      max-width: 400px;
+      margin: 0 auto 40px;
+      box-shadow: 0 0 60px rgba(255,79,154,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--pink), #C4006F);
+    }
+    .pricing-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 8px;
+    }
+    .pricing-price {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(52px, 12vw, 72px);
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .pricing-price sup {
+      font-size: 24px;
+      vertical-align: top;
+      margin-top: 10px;
+      color: var(--pink);
+    }
+    .pricing-installment {
+      font-size: 13px;
+      color: var(--white-60);
+      margin-bottom: 24px;
+    }
+
+    .comparisons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 380px;
+      margin: 0 auto 40px;
+    }
+    .comparison-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--white-80);
+      background: var(--black-3);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px;
+    }
+    .comparison-emoji { font-size: 20px; }
+
+    /* ── SECTION 9: CONVERSA SÉRIA ── */
+    .serious-section {
+      background: var(--black);
+      text-align: center;
+    }
+    .serious-copy {
+      font-size: clamp(17px, 3vw, 21px);
+      color: var(--white-80);
+      line-height: 1.9;
+      max-width: 560px;
+      margin: 0 auto 36px;
+    }
+    .serious-copy strong { color: var(--white); }
+    .serious-copy em { color: var(--pink); font-style: normal; }
+
+    /* ── SECTION 10: EXPERT ── */
+    .expert-section { background: var(--black-2); }
+
+    .expert-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+      text-align: center;
+    }
+    .expert-photo {
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      border: 3px solid var(--pink);
+      box-shadow: 0 0 30px var(--pink-glow);
+      background: var(--black-4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 11px;
+      color: var(--white-30);
+      overflow: hidden;
+    }
+    .expert-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .expert-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .expert-title {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--pink);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .expert-bio {
+      font-size: 15px;
+      color: var(--white-80);
+      line-height: 1.8;
+      max-width: 540px;
+    }
+
+    /* ── SECTION 11: FAQ ── */
+    .faq-section { background: var(--black); }
+
+    .faq-list {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 600;
+      text-align: left;
+      padding: 22px 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: color .2s;
+      font-family: 'Inter', sans-serif;
+    }
+    .faq-question:hover { color: var(--pink); }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--black-3);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .25s, background .2s;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      background: var(--pink-soft);
+      border-color: var(--border-pink);
+    }
+    .faq-answer {
+      display: none;
+      font-size: 14px;
+      color: var(--white-80);
+      line-height: 1.75;
+      padding-bottom: 20px;
+    }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* ── CTA FINAL ── */
+    .cta-final {
+      background: var(--black-2);
+      text-align: center;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-final::before {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 400px;
+      background: radial-gradient(ellipse, rgba(255,79,154,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-final-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 5vw, 40px);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-final-sub {
+      font-size: 16px;
+      color: var(--white-60);
+      margin-bottom: 40px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--black);
+      border-top: 1px solid var(--border);
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--white-60);
+    }
+    .footer-logo span { color: var(--pink); }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .footer-links a {
+      font-size: 12px;
+      color: var(--white-30);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--white-60); }
+    .footer-copy {
+      font-size: 12px;
+      color: var(--white-30);
+      line-height: 1.7;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* ── SECURITY STRIP ── */
+    .security-strip {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .security-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--white-30);
+    }
+
+    /* ── FLOATING CTA ── */
+    .floating-cta {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 90;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+      width: calc(100% - 40px);
+      max-width: 400px;
+    }
+    .floating-cta.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .floating-cta .btn-primary {
+      max-width: 100%;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.8), 0 0 30px var(--pink-glow);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-pink), transparent);
+      margin: 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (min-width: 600px) {
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      .cards-grid { grid-template-columns: 1fr 1fr; }
+      .forwhom-grid { grid-template-columns: 1fr 1fr; }
+      .resultado-list { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    @media (min-width: 760px) {
+      .expert-box { flex-direction: row; text-align: left; align-items: flex-start; }
+    }
+
+    /* PULSE ANIMATION */
+    @keyframes pulse-pink {
+      0%, 100% { box-shadow: 0 8px 32px var(--pink-glow); }
+      50% { box-shadow: 0 8px 48px rgba(255,79,154,0.55); }
+    }
+    .btn-primary { animation: pulse-pink 2.5s ease-in-out infinite; }
+    .btn-primary:hover { animation: none; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER BAR -->
+  <div class="header-bar">
+    Exclusivo para mulheres que buscam uma nova fonte de renda trabalhando de casa
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-logo">O Mercado <span>Invisível</span></div>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+       SESSÃO 1 — HERO
+  ══════════════════════════════════════ -->
+  <section class="hero">
+    <div class="container">
+      <div class="badge">Imersão Exclusiva &nbsp;·&nbsp; Vagas Limitadas</div>
+
+      <h1 class="hero-headline">
+        Descubra a profissão home office que está permitindo mulheres comuns conquistarem uma renda de
+        <em>R$3.000 a R$6.000 por mês</em>
+        trabalhando de casa — mesmo sem experiência anterior.
+      </h1>
+
+      <p class="hero-sub">
+        Enquanto milhares de mulheres continuam procurando oportunidades nos lugares errados, existe uma profissão que cresce silenciosamente e que empresas de todo o Brasil estão procurando preencher neste exato momento.<br><br>
+        Participe da Imersão O Mercado Invisível e descubra como essa oportunidade funciona na prática.
+      </p>
+
+      <!-- VSL -->
+      <div class="vsl-box">
+        <div class="vsl-ratio">
+          <div class="vsl-placeholder">
+            <div class="vsl-play">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <p class="vsl-caption">Assista ao vídeo de apresentação</p>
+          </div>
+          <!-- Para ativar: substitua o vsl-placeholder pelo iframe abaixo -->
+          <!-- <iframe src="SEU_LINK_VIDEO" allowfullscreen></iframe> -->
+        </div>
+      </div>
+
+      <!-- Event info -->
+      <div class="event-info">
+        <div class="event-info-item"><span class="emoji">📅</span> Data a confirmar</div>
+        <div class="event-info-item"><span class="emoji">🕒</span> Horário a confirmar</div>
+        <div class="event-info-item"><span class="emoji">🌎</span> 100% Online</div>
+        <div class="event-info-item"><span class="emoji">🔒</span> Acesso seguro</div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-group">
+        <a href="#pricing" class="btn-primary">Quero garantir meu ingresso</a>
+        <p class="microcopy">Vagas limitadas para esta edição.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SESSÃO 2 — PROVAS E VALIDAÇÃO
+  ══════════════════════════════════════ -->
+  <section class="social-proof">
+    <div class="container-lg">
+      <p class="section-badge">Resultados Reais</p>
+      <h2 class="section-headline">Mulheres comuns.<br>Resultados reais.</h2>
+      <p class="section-sub">Não estamos falando de teorias.<br>Estamos falando de pessoas que descobriram uma nova possibilidade profissional e decidiram agir.</p>
+
+      <div class="testimonials-grid">
+        <!-- Card 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-placeholder">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            <span>Inserir vídeo depoimento</span>
+          </div>
+          <p class="testimonial-name">Maria S.</p>
+          <p class="testimonial-text">"Não acreditei que seria tão real até começar a receber. Primeira renda trabalhando de casa."</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-placeholder">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Inserir print / resultado</span>
+          </div>
+          <p class="testimonial-name">Ana L.</p>
+          <p class="testimonial-text">"Consegui conciliar os filhos e o trabalho. Nunca imaginei que isso fosse possível."</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-placeholder">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            <span>Inserir vídeo depoimento</span>
+          </div>
+          <p class="testimonial-name">Renata M.</p>
+          <p class="testimonial-text">"Voltei ao mercado após anos parada. Essa imersão abriu meus olhos para algo que eu não conhecia."</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="testimonial-card">
+          <div class="testimonial-placeholder">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Inserir print / resultado</span>
+          </div>
+          <p class="testimonial-name">Juliana K.</p>
+          <p class="testimonial-text">"Primeiros clientes conquistados. Nunca pensei que poderia ser eu."</p>
+        </div>
+      </div>
+
+      <div class="bullets-list" style="max-width:480px;margin:0 auto;">
+        <div class="bullet-item"><span class="bullet-check">✔</span> Primeira renda trabalhando de casa</div>
+        <div class="bullet-item"><span class="bullet-check">✔</span> Mais liberdade de horário</div>
+        <div class="bullet-item"><span class="bullet-check">✔</span> Reconstrução da confiança profissional</div>
+        <div class="bullet-item"><span class="bullet-check">✔</span> Mulheres conciliando família e trabalho</div>
+        <div class="bullet-item"><span class="bullet-check">✔</span> Primeiros clientes conquistados</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SESSÃO 3 — O PROBLEMA
+  ══════════════════════════════════════ -->
+  <section class="problem-section">
+    <div class="container" style="text-align:center;">
+      <p class="section-badge">O Cenário Atual</p>
+      <h2 class="section-headline">O mercado mudou.<br>Mas a maioria das pessoas continua presa às regras antigas.</h2>
+
+      <p class="problem-copy">
+        Durante anos nos ensinaram que o caminho era simples:<br><br>
+        <strong>Enviar currículos.</strong><br>
+        <strong>Esperar respostas.</strong><br>
+        <strong>Participar de entrevistas.</strong><br>
+        <strong>Concorrer com centenas de candidatos.</strong><br><br>
+        Mas existe um problema.<br><br>
+        O mercado mudou.<br>
+        As empresas mudaram.<br>
+        A forma de vender mudou.<br><br>
+        <strong>E novas profissões surgiram.</strong>
+      </p>
+
+      <div class="insight-box">
+        <p>Enquanto milhares de pessoas continuam disputando vagas tradicionais, empresas estão procurando profissionais para funções que <strong>quase ninguém conhece</strong>.<br><br>
+        E justamente por isso existe escassez.<br><br>
+        <strong>Pouca concorrência. Alta demanda.<br>E oportunidades que passam despercebidas pela maioria.</strong></p>
+      </div>
+
+      <p class="problem-callout">
+        O verdadeiro risco não é tentar algo novo.<br>
+        <em>O verdadeiro risco é continuar parada enquanto o mercado evolui sem você.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SESSÃO 4 — O QUE VOCÊ VAI DESCOBRIR
+  ══════════════════════════════════════ -->
+  <section class="discover-section">
+    <div class="container-lg">
+      <div style="text-align:center;margin-bottom:48px;">
+        <p class="section-badge">Conteúdo da Imersão</p>
+        <h2 class="section-headline">O que você vai descobrir durante<br>a Imersão O Mercado Invisível</h2>
+      </div>
+
+      <div class="cards-grid">
+        <div class="discover-card">
+          <div class="card-number">01</div>
+          <p class="card-title">A profissão que está crescendo silenciosamente</p>
+          <p class="card-text">Entenda por que tantas empresas estão procurando profissionais para essa função.</p>
+        </div>
+        <div class="discover-card">
+          <div class="card-number">02</div>
+          <p class="card-title">Como o trabalho funciona na prática</p>
+          <p class="card-text">Descubra exatamente o que esses profissionais fazem no dia a dia.</p>
+        </div>
+        <div class="discover-card">
+          <div class="card-number">03</div>
+          <p class="card-title">Como pessoas comuns estão entrando nesse mercado</p>
+          <p class="card-text">Veja os caminhos mais rápidos para começar.</p>
+        </div>
+        <div class="discover-card">
+          <div class="card-number">04</div>
+          <p class="card-title">Como transformar essa habilidade em uma fonte de renda</p>
+          <p class="card-text">Conheça as possibilidades de crescimento e desenvolvimento profissional.</p>
+        </div>
+      </div>
+
+      <div class="resultado-grid">
+        <p class="resultado-title">Resultado final</p>
+        <div class="resultado-list">
+          <div class="resultado-item"><span class="check">✔</span> Trabalhar de casa</div>
+          <div class="resultado-item"><span class="check">✔</span> Horários flexíveis</div>
+          <div class="resultado-item"><span class="check">✔</span> Mais liberdade</div>
+          <div class="resultado-item"><span class="check">✔</span> Tempo com a família</div>
+          <div class="resultado-item"><span class="check">✔</span> Independência financeira</div>
+          <div class="resultado-item"><span class="check">✔</span> Nova perspectiva profissional</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SESSÃO 5 — COMO FUNCIONA O EVENTO
+  ══════════════════════════════════════ -->
+  <section class="event-section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px;">
+        <p class="section-badge">Estrutura do Evento</p>
+        <h2 class="section-headline">Uma experiência criada para abrir seus olhos para um mercado que a maioria das pessoas sequer conhece.</h2>
+      </div>
+
+      <div class="modules-list">
+        <div class="module-item">
+          <div class="module-number">1</div>
+          <div class="module-content">
+            <p class="module-tag">Módulo 01</p>
+            <p class="module-title">O Mercado Invisível</p>
+            <p class="module-desc">Por que existem tantas oportunidades escondidas da maioria das pessoas.</p>
+          </div>
+        </div>
+        <div class="module-item">
+          <div class="module-number">2</div>
+          <div class="module-content">
+            <p class="module-tag">Módulo 02</p>
+            <p class="module-title">Os Bastidores da Nova Economia Digital</p>
+            <p class="module-desc">Como empresas estão contratando profissionais atualmente.</p>
+          </div>
+        </div>
+        <div class="module-item">
+          <div class="module-number">3</div>
+          <div class="module-content">
+            <p class="module-tag">Módulo 03</p>
+            <p class="module-title">A Profissão Que Está Chamando Atenção Das Empresas</p>
+            <p class="module-desc">O que faz um Social Seller e por que existe tanta demanda por esse profissional.</p>
+          </div>
+        </div>
+        <div class="module-item">
+          <div class="module-number">4</div>
+          <div class="module-content">
+            <p class="module-tag">Módulo 04</p>
+            <p class="module-title">O Caminho Para Começar</p>
+            <p class="module-desc">O plano para sair do zero e iniciar sua jornada com segurança.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SESSÃO 6 — PARA QUEM É
+  ══════════════════════════════════════ -->
+  <section class="forwhom-section">
+    <div class="container-lg">
+      <div style="text-align:center;margin-bottom:40px;">
+        <p class="section-badge">Público</p>
+        <h2 class="section-headline">Essa imersão é para você?</h2>
+      </div>
+
+      <div class="forwhom-grid">
+        <div class="forwhom-card forwhom-yes">
+          <p class="forwhom-label">Sim, se você:</p>
+          <div class="forwhom-item"><span class="forwhom-icon-yes">✔</span> Quer trabalhar de casa</div>
+          <div class="forwhom-item"><span class="forwhom-icon-yes">✔</span> Busca uma nova fonte de renda</div>
+          <div class="forwhom-item"><span class="forwhom-icon-yes">✔</span> Deseja mais liberdade</div>
+          <div class="forwhom-item"><span class="forwhom-icon-yes">✔</span> Quer mais tempo para sua família</div>
+          <div class="forwhom-item"><span class="forwhom-icon-yes">✔</span> Está aberta a aprender uma nova habilidade</div>
+          <div class="forwhom-item"><span class="forwhom-icon-yes">✔</span> Busca independência financeira</div>
+        </div>
+        <div class="forwhom-card forwhom-no">
+          <p class="forwhom-label">Não, se você:</p>
+          <div class="forwhom-item"><span class="forwhom-icon-no">✘</span> Procura dinheiro fácil</div>
+          <div class="forwhom-item"><span class="forwhom-icon-no">✘</span> Não deseja aprender</div>
+          <div class="forwhom-item"><span class="forwhom-icon-no">✘</span> Busca resultados sem aplicação</div>
+          <div class="forwhom-item"><span class="forwhom-icon-no">✘</span> Espera enriquecimento imediato</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SESSÃO 7 — O QUE VOCÊ RECEBE
+  ══════════════════════════════════════ -->
+  <section class="bonus-section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:40px;">
+        <p class="section-badge">O que está incluso</p>
+        <h2 class="section-headline">Ao garantir sua vaga<br>você recebe:</h2>
+      </div>
+
+      <div class="bonus-list">
+        <div class="bonus-item">
+          <div class="bonus-icon">🎯</div>
+          <div class="bonus-text">
+            <p class="bonus-name">Acesso completo à Imersão</p>
+            <p class="bonus-desc">Participação em todos os módulos ao vivo</p>
+          </div>
+        </div>
+        <div class="bonus-item">
+          <div class="bonus-icon">📡</div>
+          <div class="bonus-text">
+            <p class="bonus-name">Método apresentado ao vivo</p>
+            <p class="bonus-desc">Conteúdo prático com aplicação imediata</p>
+          </div>
+        </div>
+        <div class="bonus-item">
+          <div class="bonus-icon">📋</div>
+          <div class="bonus-text">
+            <p class="bonus-name">Material complementar</p>
+            <p class="bonus-desc">Recursos de apoio para reforçar o aprendizado</p>
+          </div>
+        </div>
+        <div class="bonus-item">
+          <div class="bonus-icon">🗺️</div>
+          <div class="bonus-text">
+            <p class="bonus-name">Mapa das oportunidades</p>
+            <p class="bonus-desc">Guia prático para identificar onde estão as vagas</p>
+          </div>
+        </div>
+        <div class="bonus-item">
+          <div class="bonus-icon">🎬</div>
+          <div class="bonus-text">
+            <p class="bonus-name">Acesso à gravação</p>
+            <p class="bonus-desc">Assista quando e quantas vezes quiser</p>
+          </div>
+        </div>
+        <div class="bonus-item">
+          <div class="bonus-icon">🏅</div>
+          <div class="bonus-text">
+            <p class="bonus-name">Certificado de participação</p>
+            <p class="bonus-desc">Documento que comprova sua presença no evento</p>
+          </div>
+        </div>
+        <div class="bonus-item">
+          <div class="bonus-icon">🎁</div>
+          <div class="bonus-text">
+            <p class="bonus-name">Bônus exclusivos</p>
+            <p class="bonus-desc">Surpresas para quem confirmar presença</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SESSÃO 8 — INVESTIMENTO
+  ══════════════════════════════════════ -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <p class="section-badge">Investimento</p>
+      <h2 class="section-headline" style="margin-bottom:16px;">Quanto vale descobrir uma oportunidade capaz de mudar sua trajetória profissional?</h2>
+
+      <p class="section-sub">Uma formação profissional normalmente custa:</p>
+
+      <div class="pricing-strike">
+        <span class="strike-item">R$997</span>
+        <span class="strike-item">R$1.997</span>
+        <span class="strike-item">R$2.997 ou muito mais</span>
+      </div>
+
+      <div class="pricing-box">
+        <p class="pricing-label">Valor de acesso desta edição</p>
+        <p class="pricing-price"><sup>R$</sup>97</p>
+        <p class="pricing-installment">Acesso imediato após a confirmação</p>
+        <a href="#" class="btn-primary" style="max-width:100%;">Quero participar da Imersão</a>
+        <p class="microcopy" style="margin-top:14px;">Pagamento seguro e acesso imediato após confirmação.</p>
+      </div>
+
+      <p style="font-size:14px;color:var(--white-60);margin-bottom:16px;">Menos que:</p>
+
+      <div class="comparisons">
+        <div class="comparison-item">
+          <span class="comparison-emoji">☕</span>
+          Alguns cafés por semana
+        </div>
+        <div class="comparison-item">
+          <span class="comparison-emoji">🍕</span>
+          Um final de semana de delivery
+        </div>
+        <div class="comparison-item">
+          <span class="comparison-emoji">🎬</span>
+          Uma ida ao cinema com a família
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SESSÃO 9 — CONVERSA SÉRIA
+  ══════════════════════════════════════ -->
+  <section class="serious-section">
+    <div class="container">
+      <p class="section-badge">Uma Decisão Simples</p>
+      <h2 class="section-headline" style="max-width:480px;margin:0 auto 24px;">A decisão é simples.</h2>
+
+      <p class="serious-copy">
+        Daqui a seis meses você estará em algum lugar.<br><br>
+        A pergunta é:<br><br>
+        <strong>Vai continuar procurando oportunidades onde todo mundo procura?</strong><br><br>
+        Ou vai descobrir uma oportunidade que a maioria das pessoas ainda nem percebeu?<br><br>
+        Você não precisa decidir sua vida inteira hoje.<br><br>
+        Precisa apenas decidir reservar algumas horas para conhecer algo novo.<br><br>
+        <em>Talvez essa seja a oportunidade que você estava esperando.</em>
+      </p>
+
+      <div class="cta-group">
+        <a href="#pricing" class="btn-primary">Sim, quero descobrir o Mercado Invisível</a>
+        <p class="microcopy">Vagas limitadas para esta edição.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SESSÃO 10 — SOBRE O ESPECIALISTA
+  ══════════════════════════════════════ -->
+  <section class="expert-section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:40px;">
+        <p class="section-badge">Quem Vai Conduzir</p>
+        <h2 class="section-headline">Quem vai conduzir essa imersão?</h2>
+      </div>
+
+      <div class="expert-box">
+        <div class="expert-photo">
+          <!-- Substituir por: <img src="foto-victor.jpg" alt="Victor Benedini" /> -->
+          <span>Foto</span>
+        </div>
+        <div>
+          <p class="expert-name">Victor Benedini</p>
+          <p class="expert-title">Especialista em Social Selling</p>
+          <p class="expert-bio">
+            Especialista em Social Selling e desenvolvimento comercial, ao longo dos últimos anos ajudou empresas a estruturarem processos de vendas e profissionais a desenvolverem habilidades valorizadas pelo mercado atual.<br><br>
+            Seu trabalho é mostrar caminhos que normalmente permanecem invisíveis para quem está fora desse mercado.<br><br>
+            Durante a Imersão O Mercado Invisível você terá acesso à visão prática de quem atua diariamente nesse ambiente.
+          </p>
+          <div style="margin-top:24px;">
+            <a href="#pricing" class="btn-secondary">Garantir minha vaga</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SESSÃO 11 — FAQ
+  ══════════════════════════════════════ -->
+  <section class="faq-section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px;">
+        <p class="section-badge">Dúvidas Frequentes</p>
+        <h2 class="section-headline">Perguntas frequentes</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            Preciso aparecer nas redes sociais?
+            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="1" x2="6" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-answer">Não. A profissão apresentada nesta imersão não exige exposição nas redes sociais.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Preciso gravar vídeos?
+            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="1" x2="6" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-answer">Não. Você não precisará gravar vídeos para atuar nessa profissão.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Preciso ter experiência?
+            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="1" x2="6" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-answer">Não. A imersão foi pensada para pessoas que estão começando do zero.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Preciso saber vender?
+            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="1" x2="6" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-answer">Não. Durante a imersão você vai descobrir como essa habilidade se desenvolve com o tempo.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            O evento será ao vivo?
+            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="1" x2="6" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-answer">Sim. A imersão acontece ao vivo para que você possa acompanhar em tempo real e tirar dúvidas.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Vai ficar gravado?
+            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="1" x2="6" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-answer">Confirmar conforme estratégia definida pela equipe do evento.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Quanto tempo dura?
+            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="1" x2="6" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-answer">Confirmar conforme cronograma do evento.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Como recebo acesso?
+            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="1" x2="6" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-answer">Por e-mail, logo após a confirmação do seu pagamento. Verifique sua caixa de entrada e spam.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Existe suporte?
+            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="1" x2="6" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-answer">Sim. Nosso suporte estará disponível durante todo o período do evento.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CTA FINAL
+  ══════════════════════════════════════ -->
+  <section class="cta-final">
+    <div class="container">
+      <h2 class="cta-final-headline">
+        Você pode continuar fazendo o que sempre fez...<br>
+        <span class="pink">ou descobrir uma oportunidade que a maioria das pessoas ainda não enxergou.</span>
+      </h2>
+      <p class="cta-final-sub">Garanta sua vaga agora.</p>
+
+      <div class="cta-group">
+        <a href="#pricing" class="btn-primary">Quero participar da Imersão O Mercado Invisível</a>
+        <p class="microcopy" style="margin-top:14px;">Vagas limitadas para esta edição.</p>
+      </div>
+
+      <div class="security-strip">
+        <div class="security-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Pagamento 100% seguro
+        </div>
+        <div class="security-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Dados protegidos
+        </div>
+        <div class="security-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Acesso imediato
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer-logo">O Mercado <span>Invisível</span></p>
+    <div class="footer-links">
+      <a href="#">Termos de Uso</a>
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Contato</a>
+    </div>
+    <p class="footer-copy">
+      © 2025 Imersão O Mercado Invisível. Todos os direitos reservados.<br>
+      Este produto não garante resultados financeiros. Os resultados apresentados são casos individuais e podem variar. O sucesso depende de dedicação, esforço e aplicação do conteúdo.
+    </p>
+  </footer>
+
+  <!-- FLOATING CTA -->
+  <div class="floating-cta" id="floatingCta">
+    <a href="#pricing" class="btn-primary" style="text-align:center;">
+      Garantir minha vaga — R$97
+    </a>
+  </div>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // Floating CTA
+    const floatingCta = document.getElementById('floatingCta');
+    const hero = document.querySelector('.hero');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        floatingCta.classList.toggle('visible', !e.isIntersecting);
+      });
+    }, { threshold: 0.2 });
+    observer.observe(hero);
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
