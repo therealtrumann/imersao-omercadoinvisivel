@@ -1734,20 +1734,6 @@
   </div>
 
   <script>
-    // A/B Test — rastrear clique em botão de checkout (uma vez por sessão)
-    (function() {
-      if (sessionStorage.getItem('ab_tracked')) return
-      const variant = (document.cookie.match(/ab_variant=([ab])/) || [])[1] || 'b'
-      function track() {
-        if (sessionStorage.getItem('ab_tracked')) return
-        sessionStorage.setItem('ab_tracked', '1')
-        navigator.sendBeacon('/api/track', JSON.stringify({ variant }))
-      }
-      document.querySelectorAll('.btn-primary, .floating-cta a').forEach(function(el) {
-        el.addEventListener('click', track)
-      })
-    })();
-
     // FAQ accordion
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
