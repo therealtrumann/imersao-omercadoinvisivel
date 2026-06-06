@@ -68,7 +68,7 @@
       background: linear-gradient(135deg, var(--pink) 0%, #C4006F 100%);
       text-align: center;
       padding: 16px 20px;
-      font-size: clamp(18px, 4vw, 26px);
+      font-size: clamp(11px, 2.5vw, 14px);
       font-weight: 700;
       letter-spacing: 0.3px;
       line-height: 1.5;
@@ -77,14 +77,15 @@
 
     /* ── NAVBAR ── */
     .navbar {
-      border-bottom: 1px solid var(--border);
-      padding: 16px 24px;
+      background: #fff;
+      border-bottom: 3px solid var(--pink);
+      padding: 12px 24px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .navbar-logo-img {
-      height: 72px;
+      height: 80px;
       width: auto;
       display: block;
     }
@@ -1188,7 +1189,7 @@
 
   <!-- NAVBAR -->
   <nav class="navbar">
-    <img src="logo.png" alt="Imersão Mercado Invisível" class="navbar-logo-img">
+    <img src="logo rosa.png" alt="Imersão Mercado Invisível" class="navbar-logo-img">
   </nav>
 
   <!-- ══════════════════════════════════════
@@ -1253,12 +1254,7 @@
       <!-- Stats visuais -->
       <div class="stats-bar">
         <div class="stat-item">
-          <span class="stat-number">4.200+</span>
-          <span class="stat-label">mulheres já participaram</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-number">R$4.369</span>
+          <span class="stat-number" id="statRenda">R$0</span>
           <span class="stat-label">renda média após 60 dias</span>
         </div>
         <div class="stat-divider"></div>
@@ -1275,7 +1271,7 @@
           <p class="testimonial-text">"Eu estava desempregada há quase cinco meses. Tinha vergonha de falar. Aí descobri esse mercado e em menos de 30 dias já estava gerando minha primeira renda em casa. Não esperava que fosse funcionar tão rápido."</p>
           <div class="testimonial-header">
             <div class="testimonial-avatar">
-              <img src="https://i.pravatar.cc/96?img=47" alt="Camila R." loading="lazy">
+              <img src="depoimento1.png" alt="Camila R." loading="lazy">
             </div>
             <div class="testimonial-header-text">
               <p class="testimonial-name">Camila R.</p>
@@ -1289,7 +1285,7 @@
           <p class="testimonial-text">"Na semana seguinte ao evento já tinham me chamado para entrar numa equipe. Trabalhei à tarde, do meu quarto, e no final do mês recebi R$1.800. Fiquei em choque. Achei que não era pra mim."</p>
           <div class="testimonial-header">
             <div class="testimonial-avatar">
-              <img src="https://i.pravatar.cc/96?img=25" alt="Mariana S." loading="lazy">
+              <img src="depoimento3.jpg" alt="Mariana S." loading="lazy">
             </div>
             <div class="testimonial-header-text">
               <p class="testimonial-name">Mariana S.</p>
@@ -1303,7 +1299,7 @@
           <p class="testimonial-text">"Quando vi o número na minha conta não acreditei. R$7.288 num mês. Eu que ficava pedindo aumento na empresa e nunca passava de R$2.100. Agora trabalho de casa e ganho mais do que o dobro."</p>
           <div class="testimonial-header">
             <div class="testimonial-avatar">
-              <img src="https://i.pravatar.cc/96?img=56" alt="Geisa B." loading="lazy">
+              <img src="depoimento2.png" alt="Geisa B." loading="lazy">
             </div>
             <div class="testimonial-header-text">
               <p class="testimonial-name">Geisa B.</p>
@@ -1317,7 +1313,7 @@
           <p class="testimonial-text">"Sempre achei que precisava de faculdade, de experiência, de um currículo bonito. Não precisa de nada disso. Aprendi, apliquei, e comecei a receber por isso. Simples assim. Nunca imaginei que fosse possível."</p>
           <div class="testimonial-header">
             <div class="testimonial-avatar">
-              <img src="https://i.pravatar.cc/96?img=9" alt="Karina P." loading="lazy">
+              <img src="depoimento4.png" alt="Karina P." loading="lazy">
             </div>
             <div class="testimonial-header-text">
               <p class="testimonial-name">Karina P.</p>
@@ -1795,6 +1791,44 @@
         }
       });
     });
+
+    // Contador animado R$4.369
+    (function() {
+      const el = document.getElementById('statRenda');
+      if (!el) return;
+      const target = 4369;
+      const duration = 2000;
+      let started = false;
+
+      function formatBRL(n) {
+        return 'R$' + Math.floor(n).toLocaleString('pt-BR');
+      }
+
+      function animate(startTime) {
+        const now = performance.now();
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = formatBRL(eased * target);
+        if (progress < 1) {
+          requestAnimationFrame(() => animate(startTime));
+        } else {
+          el.textContent = 'R$4.369';
+        }
+      }
+
+      const counterObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !started) {
+            started = true;
+            requestAnimationFrame(t => animate(t));
+            counterObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counterObserver.observe(el);
+    })();
   </script>
 
 </body>
