@@ -77,8 +77,8 @@
 
     /* ── NAVBAR ── */
     .navbar {
-      background: #fff;
-      border-bottom: 3px solid var(--pink);
+      background: var(--black);
+      border-bottom: 1px solid var(--border);
       padding: 12px 24px;
       display: flex;
       align-items: center;
@@ -88,6 +88,8 @@
       height: 80px;
       width: auto;
       display: block;
+      /* fundo branco → preto (some no dark) · rosa restaurado via hue-rotate */
+      filter: invert(1) hue-rotate(180deg) brightness(1.5) saturate(1.3);
     }
     .navbar-logo {
       font-family: 'Playfair Display', serif;
