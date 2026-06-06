@@ -1744,15 +1744,27 @@
       });
     });
 
-    // Floating CTA
+    // Floating CTA — mostra após hero, esconde após bonus-section
     const floatingCta = document.getElementById('floatingCta');
     const hero = document.querySelector('.hero');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        floatingCta.classList.toggle('visible', !e.isIntersecting);
-      });
-    }, { threshold: 0.2 });
-    observer.observe(hero);
+    const bonusSection = document.querySelector('.bonus-section');
+    let heroPast = false;
+    let bonusPast = false;
+
+    function syncCta() {
+      floatingCta.classList.toggle('visible', heroPast && !bonusPast);
+    }
+
+    new IntersectionObserver(entries => {
+      heroPast = !entries[0].isIntersecting;
+      syncCta();
+    }, { threshold: 0.2 }).observe(hero);
+
+    new IntersectionObserver(entries => {
+      const e = entries[0];
+      bonusPast = !e.isIntersecting && e.boundingClientRect.top < 0;
+      syncCta();
+    }, { threshold: 0 }).observe(bonusSection);
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(a => {
