@@ -26,37 +26,53 @@
       --white-80: rgba(255,255,255,0.80);
       --white-60: rgba(255,255,255,0.60);
       --white-30: rgba(255,255,255,0.30);
-      --white-10: rgba(255,255,255,0.07);
       --border: rgba(255,255,255,0.09);
       --border-pink: rgba(255, 79, 154, 0.25);
+
+      /* Escala de espaçamento */
+      --space-1: 8px;
+      --space-2: 16px;
+      --space-3: 24px;
+      --space-4: 32px;
+      --space-5: 40px;
+      --space-6: 56px;
+      --space-7: 72px;
+
+      /* Seção vertical rhythm mobile */
+      --section-y: 60px;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 52px; /* compensa o header bar sticky */
+    }
 
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--black);
       color: var(--white);
-      line-height: 1.6;
+      line-height: 1.65;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     /* ── UTILS ── */
-    .container { width: 100%; max-width: 720px; margin: 0 auto; padding: 0 20px; }
-    .container-lg { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 20px; }
-
-    .pink { color: var(--pink); }
+    .container    { width: 100%; max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .container-lg { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    .pink  { color: var(--pink); }
     .serif { font-family: 'Playfair Display', serif; }
 
     /* ── HEADER BAR ── */
     .header-bar {
       background: linear-gradient(135deg, var(--pink) 0%, #C4006F 100%);
       text-align: center;
-      padding: 12px 20px;
-      font-size: 12px;
+      padding: 11px 16px;
+      font-size: 10.5px;
       font-weight: 700;
-      letter-spacing: 1.4px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
+      line-height: 1.5;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -66,23 +82,23 @@
     /* ── NAVBAR ── */
     .navbar {
       border-bottom: 1px solid var(--border);
-      padding: 18px 20px;
+      padding: 16px 24px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .navbar-logo {
       font-family: 'Playfair Display', serif;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       color: var(--white);
     }
     .navbar-logo span { color: var(--pink); }
 
     /* ── HERO ── */
     .hero {
-      padding: 72px 0 60px;
+      padding: 48px 0 56px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -90,10 +106,10 @@
     .hero::before {
       content: '';
       position: absolute;
-      top: -200px; left: 50%;
+      top: -160px; left: 50%;
       transform: translateX(-50%);
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(255,79,154,0.12) 0%, transparent 70%);
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(255,79,154,0.11) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -102,22 +118,22 @@
       border: 1px solid var(--border-pink);
       background: var(--pink-soft);
       color: var(--pink-light);
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: 1.6px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      padding: 7px 18px;
+      padding: 7px 16px;
       border-radius: 100px;
-      margin-bottom: 28px;
+      margin-bottom: var(--space-3);
     }
 
     .hero-headline {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(26px, 5vw, 42px);
+      font-size: clamp(28px, 7.5vw, 44px);
       font-weight: 800;
-      line-height: 1.22;
-      margin-bottom: 24px;
-      max-width: 680px;
+      line-height: 1.2;
+      margin-bottom: var(--space-3);
+      max-width: 660px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -127,27 +143,26 @@
     }
 
     .hero-sub {
-      font-size: clamp(15px, 2.5vw, 17px);
+      font-size: clamp(15px, 3.5vw, 17px);
       color: var(--white-80);
       line-height: 1.75;
-      max-width: 580px;
-      margin: 0 auto 36px;
+      max-width: 560px;
+      margin: 0 auto var(--space-5);
     }
 
     /* VSL */
     .vsl-box {
       background: var(--black-3);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 14px;
       overflow: hidden;
-      margin: 0 auto 36px;
-      max-width: 640px;
-      position: relative;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 40px var(--pink-glow);
+      margin: 0 auto var(--space-5);
+      max-width: 360px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.6), 0 0 32px var(--pink-glow);
     }
     .vsl-ratio {
       position: relative;
-      padding-bottom: 56.25%;
+      padding-bottom: 177.78%; /* 9:16 vertical */
       background: #0d0d0d;
     }
     .vsl-ratio iframe,
@@ -163,16 +178,16 @@
       gap: 12px;
     }
     .vsl-play {
-      width: 70px; height: 70px;
+      width: 64px; height: 64px;
       background: var(--pink);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 0 30px var(--pink-glow);
+      box-shadow: 0 0 28px var(--pink-glow);
       cursor: pointer;
       transition: transform .2s, box-shadow .2s;
     }
-    .vsl-play:hover { transform: scale(1.08); box-shadow: 0 0 50px var(--pink-glow); }
-    .vsl-play svg { margin-left: 5px; }
+    .vsl-play:hover { transform: scale(1.08); box-shadow: 0 0 48px var(--pink-glow); }
+    .vsl-play svg { margin-left: 4px; }
     .vsl-caption { font-size: 13px; color: var(--white-60); }
 
     /* Event info */
@@ -180,28 +195,28 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 16px 28px;
-      margin-bottom: 36px;
+      gap: 12px 20px;
+      margin-bottom: var(--space-5);
     }
     .event-info-item {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       font-size: 13px;
       color: var(--white-80);
     }
-    .event-info-item span.emoji { font-size: 16px; }
+    .event-info-item span.emoji { font-size: 15px; }
 
-    /* BUTTONS */
+    /* ── BUTTONS ── */
     .btn-primary {
       display: inline-block;
       background: linear-gradient(135deg, var(--pink) 0%, #C4006F 100%);
       color: #fff;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 800;
       letter-spacing: 1px;
       text-transform: uppercase;
-      padding: 18px 40px;
+      padding: 20px 32px;
       border-radius: 100px;
       text-decoration: none;
       border: none;
@@ -209,7 +224,9 @@
       box-shadow: 0 8px 32px var(--pink-glow);
       transition: transform .2s, box-shadow .2s;
       width: 100%;
-      max-width: 400px;
+      max-width: 420px;
+      line-height: 1.2;
+      text-align: center;
     }
     .btn-primary:hover {
       transform: translateY(-2px);
@@ -221,8 +238,8 @@
       color: var(--pink-light);
       font-size: 14px;
       font-weight: 600;
-      letter-spacing: .8px;
-      padding: 13px 32px;
+      letter-spacing: .6px;
+      padding: 14px 32px;
       border-radius: 100px;
       text-decoration: none;
       cursor: pointer;
@@ -238,42 +255,42 @@
       font-size: 12px;
       color: var(--white-60);
       margin-top: 12px;
+      line-height: 1.5;
     }
 
     .cta-group {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0;
     }
 
     /* ── SECTION BASE ── */
-    section { padding: 80px 0; }
+    section { padding: var(--section-y) 0; }
     section + section { border-top: 1px solid var(--border); }
 
     .section-badge {
       display: inline-block;
       color: var(--pink);
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .section-headline {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(24px, 4.5vw, 36px);
+      font-size: clamp(26px, 6vw, 36px);
       font-weight: 800;
-      line-height: 1.25;
-      margin-bottom: 16px;
+      line-height: 1.22;
+      margin-bottom: 14px;
     }
 
     .section-sub {
-      font-size: 16px;
+      font-size: 15px;
       color: var(--white-80);
       line-height: 1.75;
-      margin-bottom: 40px;
+      margin-bottom: var(--space-4);
     }
 
     /* ── SECTION 2: PROVAS ── */
@@ -282,15 +299,15 @@
     .testimonials-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
-      margin-bottom: 48px;
+      gap: 16px;
+      margin-bottom: var(--space-5);
     }
 
     .testimonial-card {
       background: var(--black-3);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 28px 24px;
+      padding: 24px 20px;
       text-align: left;
       position: relative;
       overflow: hidden;
@@ -303,36 +320,17 @@
       background: linear-gradient(90deg, var(--pink), transparent);
     }
 
-    .testimonial-video {
-      background: #0d0d0d;
-      border-radius: 10px;
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-      position: relative;
-      overflow: hidden;
-    }
-    .testimonial-video-play {
-      width: 52px; height: 52px;
-      background: var(--pink);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 0 20px var(--pink-glow);
-    }
-
     .testimonial-placeholder {
       background: var(--black-4);
       border: 1px dashed var(--border-pink);
       border-radius: 10px;
-      height: 160px;
+      height: 148px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       color: var(--white-30);
       font-size: 12px;
     }
@@ -346,13 +344,26 @@
       font-size: 14px;
       color: var(--white-80);
       font-style: italic;
-      line-height: 1.65;
+      line-height: 1.7;
+    }
+    .testimonial-stars {
+      color: #FFD700;
+      font-size: 17px;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .testimonial-role {
+      font-size: 12px;
+      color: var(--pink);
+      font-weight: 600;
+      margin-top: 6px;
     }
 
     .bullets-list {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
       text-align: left;
     }
     .bullet-item {
@@ -361,64 +372,62 @@
       gap: 12px;
       font-size: 15px;
       color: var(--white-80);
+      line-height: 1.55;
     }
     .bullet-check {
       color: var(--pink);
       font-weight: 800;
-      font-size: 16px;
+      font-size: 15px;
       flex-shrink: 0;
-      margin-top: 1px;
+      margin-top: 2px;
     }
 
     /* ── SECTION 3: PROBLEMA ── */
     .problem-section { background: var(--black); }
 
     .problem-copy {
-      font-size: 17px;
+      font-size: 16px;
       color: var(--white-80);
-      line-height: 2;
-      max-width: 600px;
-      margin: 0 auto 32px;
+      line-height: 1.95;
+      max-width: 580px;
+      margin: 0 auto var(--space-4);
     }
     .problem-copy strong {
       color: var(--white);
       font-weight: 700;
-    }
-    .problem-copy .break {
       display: block;
-      height: 8px;
+      margin-bottom: 2px;
     }
 
     .insight-box {
       background: var(--black-3);
       border: 1px solid var(--border-pink);
       border-radius: 16px;
-      padding: 28px 24px;
-      margin: 32px auto;
-      max-width: 560px;
+      padding: 24px 20px;
+      margin: var(--space-4) auto;
+      max-width: 540px;
       text-align: center;
     }
     .insight-box p {
       font-size: 15px;
       color: var(--white-80);
-      line-height: 1.8;
+      line-height: 1.85;
     }
-    .insight-box strong {
-      color: var(--pink);
-    }
+    .insight-box strong { color: var(--pink); }
 
     .problem-callout {
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--white-80);
-      line-height: 1.75;
+      font-size: clamp(18px, 4.5vw, 22px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.65;
       text-align: center;
-      max-width: 540px;
+      max-width: 520px;
       margin: 0 auto;
     }
     .problem-callout em {
       color: var(--pink);
       font-style: normal;
+      font-size: 1.08em;
     }
 
     /* ── SECTION 4: DESCUBRA ── */
@@ -427,22 +436,22 @@
     .cards-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
-      margin-bottom: 48px;
+      gap: 16px;
+      margin-bottom: var(--space-5);
     }
 
     .discover-card {
       background: var(--black-3);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 28px 24px;
+      padding: 24px 20px;
       position: relative;
       overflow: hidden;
       transition: border-color .25s, box-shadow .25s;
     }
     .discover-card:hover {
       border-color: var(--border-pink);
-      box-shadow: 0 8px 32px rgba(255,79,154,0.12);
+      box-shadow: 0 8px 28px rgba(255,79,154,0.12);
     }
     .discover-card::after {
       content: '';
@@ -459,19 +468,20 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 38px; height: 38px;
+      width: 36px; height: 36px;
       background: var(--pink-soft);
       border: 1px solid var(--border-pink);
       border-radius: 50%;
       color: var(--pink);
       font-weight: 800;
-      font-size: 14px;
-      margin-bottom: 16px;
+      font-size: 13px;
+      margin-bottom: 14px;
     }
     .card-title {
       font-weight: 700;
       font-size: 16px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      line-height: 1.35;
     }
     .card-text {
       font-size: 14px;
@@ -482,12 +492,12 @@
     .resultado-grid {
       background: var(--black-3);
       border: 1px solid var(--border-pink);
-      border-radius: 20px;
-      padding: 32px 24px;
-      box-shadow: 0 0 40px rgba(255,79,154,0.08);
+      border-radius: 18px;
+      padding: 28px 20px;
+      box-shadow: 0 0 36px rgba(255,79,154,0.07);
     }
     .resultado-title {
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
@@ -498,55 +508,54 @@
     .resultado-list {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px 16px;
+      gap: 14px 12px;
     }
     .resultado-item {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 8px;
       font-size: 14px;
       color: var(--white-80);
+      line-height: 1.4;
     }
-    .resultado-item .check { color: var(--pink); font-weight: 800; }
+    .resultado-item .check { color: var(--pink); font-weight: 800; flex-shrink: 0; }
 
     /* ── SECTION 5: EVENTO ── */
     .event-section { background: var(--black); }
 
-    .modules-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
+    .modules-list { display: flex; flex-direction: column; }
     .module-item {
       display: flex;
-      gap: 20px;
-      padding: 28px 0;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 24px 0;
       border-bottom: 1px solid var(--border);
     }
     .module-item:last-child { border-bottom: none; }
     .module-number {
       flex-shrink: 0;
-      width: 44px; height: 44px;
+      width: 42px; height: 42px;
       background: linear-gradient(135deg, var(--pink) 0%, #C4006F 100%);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       font-weight: 800;
-      font-size: 15px;
-      box-shadow: 0 4px 16px var(--pink-glow);
+      font-size: 14px;
+      box-shadow: 0 4px 14px var(--pink-glow);
+      margin-top: 2px;
     }
-    .module-content {}
     .module-tag {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: 1.4px;
       text-transform: uppercase;
       color: var(--pink);
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
     .module-title {
       font-weight: 700;
       font-size: 16px;
       margin-bottom: 6px;
+      line-height: 1.3;
     }
     .module-desc {
       font-size: 14px;
@@ -560,12 +569,11 @@
     .forwhom-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: 16px;
     }
-
     .forwhom-card {
       border-radius: 16px;
-      padding: 28px 24px;
+      padding: 24px 20px;
     }
     .forwhom-yes {
       background: rgba(255,79,154,0.06);
@@ -576,27 +584,29 @@
       border: 1px solid var(--border);
     }
     .forwhom-label {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
-      letter-spacing: 1.8px;
+      letter-spacing: 1.6px;
       text-transform: uppercase;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
     .forwhom-yes .forwhom-label { color: var(--pink); }
-    .forwhom-no .forwhom-label { color: var(--white-60); }
+    .forwhom-no .forwhom-label  { color: var(--white-60); }
 
     .forwhom-item {
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      font-size: 14px;
+      font-size: 15px;
       color: var(--white-80);
-      padding: 8px 0;
+      padding: 13px 0;
       border-bottom: 1px solid var(--border);
+      line-height: 1.45;
+      min-height: 44px;
     }
     .forwhom-item:last-child { border-bottom: none; }
-    .forwhom-icon-yes { color: var(--pink); font-weight: 800; }
-    .forwhom-icon-no { color: var(--white-30); }
+    .forwhom-icon-yes { color: var(--pink); font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+    .forwhom-icon-no  { color: var(--white-30); flex-shrink: 0; margin-top: 1px; }
 
     /* ── SECTION 7: RECEBE ── */
     .bonus-section { background: var(--black); }
@@ -604,37 +614,39 @@
     .bonus-list {
       background: var(--black-3);
       border: 1px solid var(--border);
-      border-radius: 20px;
+      border-radius: 18px;
       overflow: hidden;
     }
     .bonus-item {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 16px;
-      padding: 20px 24px;
+      padding: 18px 20px;
       border-bottom: 1px solid var(--border);
       transition: background .2s;
+      min-height: 64px;
     }
     .bonus-item:last-child { border-bottom: none; }
     .bonus-item:hover { background: var(--pink-soft); }
     .bonus-icon {
       flex-shrink: 0;
-      width: 36px; height: 36px;
+      width: 40px; height: 40px;
       background: var(--pink-soft);
       border: 1px solid var(--border-pink);
       border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 16px;
+      font-size: 18px;
     }
-    .bonus-text {}
     .bonus-name {
       font-weight: 600;
       font-size: 15px;
       margin-bottom: 2px;
+      line-height: 1.3;
     }
     .bonus-desc {
       font-size: 13px;
       color: var(--white-60);
+      line-height: 1.4;
     }
 
     /* ── SECTION 8: INVESTIMENTO ── */
@@ -643,9 +655,9 @@
     .pricing-strike {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 5px;
       align-items: center;
-      margin-bottom: 24px;
+      margin-bottom: var(--space-3);
     }
     .strike-item {
       font-size: 15px;
@@ -656,11 +668,11 @@
     .pricing-box {
       background: var(--black);
       border: 1px solid var(--border-pink);
-      border-radius: 24px;
-      padding: 40px 28px;
-      max-width: 400px;
-      margin: 0 auto 40px;
-      box-shadow: 0 0 60px rgba(255,79,154,0.15);
+      border-radius: 22px;
+      padding: 32px 20px;
+      max-width: 380px;
+      margin: 0 auto var(--space-5);
+      box-shadow: 0 0 56px rgba(255,79,154,0.14);
       position: relative;
       overflow: hidden;
     }
@@ -672,63 +684,77 @@
       background: linear-gradient(90deg, var(--pink), #C4006F);
     }
     .pricing-label {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 2px;
+      letter-spacing: 1.8px;
       text-transform: uppercase;
       color: var(--pink);
       margin-bottom: 8px;
     }
+    .pricing-installment-label {
+      font-size: 13px;
+      color: var(--white-60);
+      margin-bottom: 4px;
+    }
     .pricing-price {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(52px, 12vw, 72px);
+      font-size: clamp(64px, 16vw, 88px);
       font-weight: 800;
       line-height: 1;
       margin-bottom: 4px;
+      color: var(--pink);
     }
     .pricing-price sup {
       font-size: 24px;
       vertical-align: top;
-      margin-top: 10px;
+      margin-top: 12px;
       color: var(--pink);
+    }
+    .pricing-avista {
+      font-size: 14px;
+      color: var(--white-60);
+      margin-bottom: var(--space-3);
+    }
+    .pricing-avista strong {
+      color: var(--white-80);
     }
     .pricing-installment {
       font-size: 13px;
       color: var(--white-60);
-      margin-bottom: 24px;
+      margin-bottom: var(--space-3);
     }
 
     .comparisons {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      max-width: 380px;
-      margin: 0 auto 40px;
+      gap: 10px;
+      max-width: 360px;
+      margin: 0 auto var(--space-5);
     }
     .comparison-item {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       font-size: 14px;
       color: var(--white-80);
       background: var(--black-3);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 14px 18px;
+      line-height: 1.4;
+      min-height: 52px;
     }
-    .comparison-emoji { font-size: 20px; }
+    .comparison-emoji { font-size: 20px; flex-shrink: 0; }
 
     /* ── SECTION 9: CONVERSA SÉRIA ── */
-    .serious-section {
-      background: var(--black);
-      text-align: center;
-    }
+    .serious-section { background: var(--black); text-align: center; }
+
     .serious-copy {
-      font-size: clamp(17px, 3vw, 21px);
+      font-size: clamp(16px, 4vw, 20px);
       color: var(--white-80);
-      line-height: 1.9;
-      max-width: 560px;
-      margin: 0 auto 36px;
+      line-height: 1.85;
+      max-width: 540px;
+      margin: 0 auto var(--space-5);
     }
     .serious-copy strong { color: var(--white); }
     .serious-copy em { color: var(--pink); font-style: normal; }
@@ -740,14 +766,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 28px;
+      gap: var(--space-3);
       text-align: center;
     }
     .expert-photo {
-      width: 140px; height: 140px;
+      width: 130px; height: 130px;
       border-radius: 50%;
       border: 3px solid var(--pink);
-      box-shadow: 0 0 30px var(--pink-glow);
+      box-shadow: 0 0 28px var(--pink-glow);
       background: var(--black-4);
       display: flex;
       align-items: center;
@@ -757,10 +783,7 @@
       color: var(--white-30);
       overflow: hidden;
     }
-    .expert-photo img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-    }
+    .expert-photo img { width: 100%; height: 100%; object-fit: cover; }
     .expert-name {
       font-family: 'Playfair Display', serif;
       font-size: 26px;
@@ -768,30 +791,25 @@
       margin-bottom: 4px;
     }
     .expert-title {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       letter-spacing: 1px;
       color: var(--pink);
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .expert-bio {
       font-size: 15px;
       color: var(--white-80);
       line-height: 1.8;
-      max-width: 540px;
+      max-width: 520px;
     }
 
     /* ── SECTION 11: FAQ ── */
     .faq-section { background: var(--black); }
 
-    .faq-list {
-      max-width: 640px;
-      margin: 0 auto;
-    }
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-    }
+    .faq-list { max-width: 640px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--border); }
     .faq-question {
       width: 100%;
       background: none;
@@ -800,7 +818,7 @@
       font-size: 15px;
       font-weight: 600;
       text-align: left;
-      padding: 22px 0;
+      padding: 20px 0;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -808,11 +826,13 @@
       gap: 16px;
       transition: color .2s;
       font-family: 'Inter', sans-serif;
+      line-height: 1.45;
+      min-height: 60px;
     }
     .faq-question:hover { color: var(--pink); }
     .faq-icon {
       flex-shrink: 0;
-      width: 28px; height: 28px;
+      width: 30px; height: 30px;
       border-radius: 50%;
       background: var(--black-3);
       border: 1px solid var(--border);
@@ -826,7 +846,7 @@
     }
     .faq-answer {
       display: none;
-      font-size: 14px;
+      font-size: 15px;
       color: var(--white-80);
       line-height: 1.75;
       padding-bottom: 20px;
@@ -837,45 +857,45 @@
     .cta-final {
       background: var(--black-2);
       text-align: center;
-      padding: 100px 0;
+      padding: 72px 0;
       position: relative;
       overflow: hidden;
     }
     .cta-final::before {
       content: '';
       position: absolute;
-      bottom: -100px; left: 50%;
+      bottom: -80px; left: 50%;
       transform: translateX(-50%);
-      width: 700px; height: 400px;
-      background: radial-gradient(ellipse, rgba(255,79,154,0.15) 0%, transparent 70%);
+      width: 600px; height: 360px;
+      background: radial-gradient(ellipse, rgba(255,79,154,0.14) 0%, transparent 70%);
       pointer-events: none;
     }
     .cta-final-headline {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(24px, 5vw, 40px);
+      font-size: clamp(24px, 6vw, 40px);
       font-weight: 800;
-      line-height: 1.25;
-      margin-bottom: 16px;
-      max-width: 580px;
+      line-height: 1.22;
+      margin-bottom: 14px;
+      max-width: 560px;
       margin-left: auto;
       margin-right: auto;
     }
     .cta-final-sub {
       font-size: 16px;
       color: var(--white-60);
-      margin-bottom: 40px;
+      margin-bottom: var(--space-5);
     }
 
     /* ── FOOTER ── */
     .footer {
       background: var(--black);
       border-top: 1px solid var(--border);
-      padding: 40px 20px;
+      padding: 40px 24px;
       text-align: center;
     }
     .footer-logo {
       font-family: 'Playfair Display', serif;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       margin-bottom: 12px;
       color: var(--white-60);
@@ -886,20 +906,21 @@
       justify-content: center;
       gap: 24px;
       flex-wrap: wrap;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
     .footer-links a {
       font-size: 12px;
       color: var(--white-30);
       text-decoration: none;
       transition: color .2s;
+      padding: 4px 0;
     }
     .footer-links a:hover { color: var(--white-60); }
     .footer-copy {
-      font-size: 12px;
+      font-size: 11.5px;
       color: var(--white-30);
-      line-height: 1.7;
-      max-width: 500px;
+      line-height: 1.75;
+      max-width: 480px;
       margin: 0 auto;
     }
 
@@ -908,30 +929,31 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 20px;
+      gap: 16px 24px;
       flex-wrap: wrap;
-      margin-top: 20px;
+      margin-top: var(--space-3);
     }
     .security-item {
       display: flex;
       align-items: center;
       gap: 6px;
-      font-size: 11px;
+      font-size: 11.5px;
       color: var(--white-30);
     }
 
     /* ── FLOATING CTA ── */
     .floating-cta {
       position: fixed;
-      bottom: 20px;
+      bottom: 16px;
+      bottom: calc(16px + env(safe-area-inset-bottom));
       left: 50%;
       transform: translateX(-50%);
       z-index: 90;
       opacity: 0;
       pointer-events: none;
       transition: opacity .3s;
-      width: calc(100% - 40px);
-      max-width: 400px;
+      width: calc(100% - 32px);
+      max-width: 420px;
     }
     .floating-cta.visible {
       opacity: 1;
@@ -939,34 +961,49 @@
     }
     .floating-cta .btn-primary {
       max-width: 100%;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.8), 0 0 30px var(--pink-glow);
+      font-size: 13px;
+      padding: 17px 24px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.85), 0 0 28px var(--pink-glow);
     }
 
-    /* ── DIVIDER ── */
-    .divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--border-pink), transparent);
-      margin: 0;
-    }
-
-    /* ── RESPONSIVE ── */
+    /* ── RESPONSIVE — tablet (600px+) ── */
     @media (min-width: 600px) {
-      .testimonials-grid { grid-template-columns: 1fr 1fr; }
-      .cards-grid { grid-template-columns: 1fr 1fr; }
-      .forwhom-grid { grid-template-columns: 1fr 1fr; }
-      .resultado-list { grid-template-columns: 1fr 1fr 1fr; }
+      :root { --section-y: 80px; }
+
+      .hero { padding: 68px 0 72px; }
+
+      .header-bar {
+        font-size: 11.5px;
+        letter-spacing: 1.4px;
+        padding: 12px 20px;
+      }
+
+      .testimonials-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+      .cards-grid         { grid-template-columns: 1fr 1fr; gap: 20px; }
+      .forwhom-grid       { grid-template-columns: 1fr 1fr; }
+      .resultado-list     { grid-template-columns: 1fr 1fr 1fr; }
+
+      .btn-primary { font-size: 15px; padding: 20px 40px; }
+
+      .section-headline { font-size: clamp(28px, 5vw, 36px); }
+
+      .bonus-item { padding: 20px 24px; }
+      .pricing-box { padding: 40px 32px; }
+      .module-item { padding: 28px 0; }
     }
 
+    /* ── RESPONSIVE — desktop (760px+) ── */
     @media (min-width: 760px) {
       .expert-box { flex-direction: row; text-align: left; align-items: flex-start; }
+      .floating-cta { bottom: 24px; }
     }
 
-    /* PULSE ANIMATION */
+    /* ── PULSE ANIMATION ── */
     @keyframes pulse-pink {
       0%, 100% { box-shadow: 0 8px 32px var(--pink-glow); }
-      50% { box-shadow: 0 8px 48px rgba(255,79,154,0.55); }
+      50%       { box-shadow: 0 8px 48px rgba(255,79,154,0.55); }
     }
-    .btn-primary { animation: pulse-pink 2.5s ease-in-out infinite; }
+    .btn-primary { animation: pulse-pink 2.8s ease-in-out infinite; }
     .btn-primary:hover { animation: none; }
   </style>
 </head>
@@ -1016,8 +1053,8 @@
 
       <!-- Event info -->
       <div class="event-info">
-        <div class="event-info-item"><span class="emoji">📅</span> Data a confirmar</div>
-        <div class="event-info-item"><span class="emoji">🕒</span> Horário a confirmar</div>
+        <div class="event-info-item"><span class="emoji">📅</span> Quinta, 18 de junho</div>
+        <div class="event-info-item"><span class="emoji">🕒</span> 20h (horário de Brasília)</div>
         <div class="event-info-item"><span class="emoji">🌎</span> 100% Online</div>
         <div class="event-info-item"><span class="emoji">🔒</span> Acesso seguro</div>
       </div>
@@ -1042,39 +1079,31 @@
       <div class="testimonials-grid">
         <!-- Card 1 -->
         <div class="testimonial-card">
-          <div class="testimonial-placeholder">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-            <span>Inserir vídeo depoimento</span>
-          </div>
-          <p class="testimonial-name">Maria S.</p>
-          <p class="testimonial-text">"Não acreditei que seria tão real até começar a receber. Primeira renda trabalhando de casa."</p>
+          <span class="testimonial-stars">★★★★★</span>
+          <p class="testimonial-text">"Bati minha meta de call na semana. O que eu não estava fazendo em 1 mês, fiz em 7 dias. Ta dando certo mesmo!"</p>
+          <p class="testimonial-name">Camila R.</p>
+          <p class="testimonial-role">Social Seller — iniciante no digital</p>
         </div>
         <!-- Card 2 -->
         <div class="testimonial-card">
-          <div class="testimonial-placeholder">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Inserir print / resultado</span>
-          </div>
-          <p class="testimonial-name">Ana L.</p>
-          <p class="testimonial-text">"Consegui conciliar os filhos e o trabalho. Nunca imaginei que isso fosse possível."</p>
+          <span class="testimonial-stars">★★★★★</span>
+          <p class="testimonial-text">"Em menos de uma semana seguindo o método, fechei R$1.800. Estava correria e quase desanimei, mas o resultado chegou."</p>
+          <p class="testimonial-name">Mariana S.</p>
+          <p class="testimonial-role">SDR — primeira vaga no digital</p>
         </div>
         <!-- Card 3 -->
         <div class="testimonial-card">
-          <div class="testimonial-placeholder">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-            <span>Inserir vídeo depoimento</span>
-          </div>
-          <p class="testimonial-name">Renata M.</p>
-          <p class="testimonial-text">"Voltei ao mercado após anos parada. Essa imersão abriu meus olhos para algo que eu não conhecia."</p>
+          <span class="testimonial-stars">★★★★★</span>
+          <p class="testimonial-text">"Vendas diretas desse mês: R$7.288. Somando as comissões do mês passado, fica R$9.182. Nunca imaginei isso trabalhando de casa."</p>
+          <p class="testimonial-name">Geisa B.</p>
+          <p class="testimonial-role">Social Seller — 4 meses no mercado</p>
         </div>
         <!-- Card 4 -->
         <div class="testimonial-card">
-          <div class="testimonial-placeholder">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Inserir print / resultado</span>
-          </div>
-          <p class="testimonial-name">Juliana K.</p>
-          <p class="testimonial-text">"Primeiros clientes conquistados. Nunca pensei que poderia ser eu."</p>
+          <span class="testimonial-stars">★★★★★</span>
+          <p class="testimonial-text">"Parceria no direct, ligação de voz, call marcada e venda fechada. O método é simples, mas funciona de verdade quando você aplica."</p>
+          <p class="testimonial-name">Karina P.</p>
+          <p class="testimonial-role">Closer — trabalha 100% remoto</p>
         </div>
       </div>
 
@@ -1135,23 +1164,33 @@
       <div class="cards-grid">
         <div class="discover-card">
           <div class="card-number">01</div>
-          <p class="card-title">A profissão que está crescendo silenciosamente</p>
-          <p class="card-text">Entenda por que tantas empresas estão procurando profissionais para essa função.</p>
+          <p class="card-title">Por que o mercado CLT ficou tão difícil — e onde estão as saídas reais</p>
+          <p class="card-text">O cenário atual do mercado de trabalho: instabilidade, salários que não acompanham o custo de vida, e por que a maioria das pessoas está olhando para o lugar errado.</p>
         </div>
         <div class="discover-card">
           <div class="card-number">02</div>
-          <p class="card-title">Como o trabalho funciona na prática</p>
-          <p class="card-text">Descubra exatamente o que esses profissionais fazem no dia a dia.</p>
+          <p class="card-title">As profissões do digital que pagam de R$3k a R$10k/mês</p>
+          <p class="card-text">Social Seller, SDR, BDR, Closer, CS — o que são, como funcionam, quanto pagam e qual o plano de carreira de quem entra nesse mercado.</p>
         </div>
         <div class="discover-card">
           <div class="card-number">03</div>
-          <p class="card-title">Como pessoas comuns estão entrando nesse mercado</p>
-          <p class="card-text">Veja os caminhos mais rápidos para começar.</p>
+          <p class="card-title">Como o Social Selling funciona na prática</p>
+          <p class="card-text">O dia a dia real de quem trabalha com social selling: como geram leads, como abordam, como conduzem conversas e como transformam interações em vendas.</p>
         </div>
         <div class="discover-card">
           <div class="card-number">04</div>
-          <p class="card-title">Como transformar essa habilidade em uma fonte de renda</p>
-          <p class="card-text">Conheça as possibilidades de crescimento e desenvolvimento profissional.</p>
+          <p class="card-title">O Instagram como mina de ouro para encontrar vagas</p>
+          <p class="card-text">Onde as empresas digitais estão e como identificar oportunidades que quase ninguém enxerga — incluindo uma estratégia pouco conhecida para se destacar antes mesmo de se candidatar.</p>
+        </div>
+        <div class="discover-card">
+          <div class="card-number">05</div>
+          <p class="card-title">Onde encontrar as vagas abertas agora</p>
+          <p class="card-text">As plataformas certas (incluindo onde quase ninguém olha), as palavras-chave que fazem diferença na busca e como filtrar as melhores oportunidades remotas.</p>
+        </div>
+        <div class="discover-card">
+          <div class="card-number">06</div>
+          <p class="card-title">Como montar um currículo digital que chama atenção</p>
+          <p class="card-text">O padrão ideal que recrutadores do mercado digital esperam ver — mesmo que você não tenha experiência prévia na área.</p>
         </div>
       </div>
 
@@ -1164,53 +1203,6 @@
           <div class="resultado-item"><span class="check">✔</span> Tempo com a família</div>
           <div class="resultado-item"><span class="check">✔</span> Independência financeira</div>
           <div class="resultado-item"><span class="check">✔</span> Nova perspectiva profissional</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       SESSÃO 5 — COMO FUNCIONA O EVENTO
-  ══════════════════════════════════════ -->
-  <section class="event-section">
-    <div class="container">
-      <div style="text-align:center;margin-bottom:48px;">
-        <p class="section-badge">Estrutura do Evento</p>
-        <h2 class="section-headline">Uma experiência criada para abrir seus olhos para um mercado que a maioria das pessoas sequer conhece.</h2>
-      </div>
-
-      <div class="modules-list">
-        <div class="module-item">
-          <div class="module-number">1</div>
-          <div class="module-content">
-            <p class="module-tag">Módulo 01</p>
-            <p class="module-title">O Mercado Invisível</p>
-            <p class="module-desc">Por que existem tantas oportunidades escondidas da maioria das pessoas.</p>
-          </div>
-        </div>
-        <div class="module-item">
-          <div class="module-number">2</div>
-          <div class="module-content">
-            <p class="module-tag">Módulo 02</p>
-            <p class="module-title">Os Bastidores da Nova Economia Digital</p>
-            <p class="module-desc">Como empresas estão contratando profissionais atualmente.</p>
-          </div>
-        </div>
-        <div class="module-item">
-          <div class="module-number">3</div>
-          <div class="module-content">
-            <p class="module-tag">Módulo 03</p>
-            <p class="module-title">A Profissão Que Está Chamando Atenção Das Empresas</p>
-            <p class="module-desc">O que faz um Social Seller e por que existe tanta demanda por esse profissional.</p>
-          </div>
-        </div>
-        <div class="module-item">
-          <div class="module-number">4</div>
-          <div class="module-content">
-            <p class="module-tag">Módulo 04</p>
-            <p class="module-title">O Caminho Para Começar</p>
-            <p class="module-desc">O plano para sair do zero e iniciar sua jornada com segurança.</p>
-          </div>
         </div>
       </div>
     </div>
@@ -1287,13 +1279,6 @@
           </div>
         </div>
         <div class="bonus-item">
-          <div class="bonus-icon">🎬</div>
-          <div class="bonus-text">
-            <p class="bonus-name">Acesso à gravação</p>
-            <p class="bonus-desc">Assista quando e quantas vezes quiser</p>
-          </div>
-        </div>
-        <div class="bonus-item">
           <div class="bonus-icon">🏅</div>
           <div class="bonus-text">
             <p class="bonus-name">Certificado de participação</p>
@@ -1329,8 +1314,9 @@
 
       <div class="pricing-box">
         <p class="pricing-label">Valor de acesso desta edição</p>
-        <p class="pricing-price"><sup>R$</sup>97</p>
-        <p class="pricing-installment">Acesso imediato após a confirmação</p>
+        <p class="pricing-installment-label">12x de</p>
+        <p class="pricing-price"><sup>R$</sup>9</p>
+        <p class="pricing-avista">ou <strong>R$97 à vista no Pix</strong></p>
         <a href="#" class="btn-primary" style="max-width:100%;">Quero participar da Imersão</a>
         <p class="microcopy" style="margin-top:14px;">Pagamento seguro e acesso imediato após confirmação.</p>
       </div>
@@ -1339,16 +1325,16 @@
 
       <div class="comparisons">
         <div class="comparison-item">
-          <span class="comparison-emoji">☕</span>
-          Alguns cafés por semana
+          <span class="comparison-emoji">🚌</span>
+          O quanto você gasta de transporte em uma semana indo trabalhar numa CLT que não te valoriza
         </div>
         <div class="comparison-item">
-          <span class="comparison-emoji">🍕</span>
-          Um final de semana de delivery
+          <span class="comparison-emoji">📱</span>
+          Uma recarga de celular pré-pago que você faz sem pensar duas vezes
         </div>
         <div class="comparison-item">
-          <span class="comparison-emoji">🎬</span>
-          Uma ida ao cinema com a família
+          <span class="comparison-emoji">🏋️</span>
+          Uma mensalidade de academia que você paga há meses sem frequentar
         </div>
       </div>
     </div>
@@ -1461,14 +1447,14 @@
             Vai ficar gravado?
             <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="1" x2="6" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
           </button>
-          <div class="faq-answer">Confirmar conforme estratégia definida pela equipe do evento.</div>
+          <div class="faq-answer">A imersão acontece ao vivo. O acesso à gravação não está incluído nesta modalidade de ingresso — por isso, recomendamos que você bloqueie a data na sua agenda para participar ao vivo e aproveitar ao máximo.</div>
         </div>
         <div class="faq-item">
           <button class="faq-question">
             Quanto tempo dura?
             <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="1" x2="6" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
           </button>
-          <div class="faq-answer">Confirmar conforme cronograma do evento.</div>
+          <div class="faq-answer">A imersão tem duração de 1h a 1h30, com conteúdo direto ao ponto e sem enrolação.</div>
         </div>
         <div class="faq-item">
           <button class="faq-question">
@@ -1538,7 +1524,7 @@
   <!-- FLOATING CTA -->
   <div class="floating-cta" id="floatingCta">
     <a href="#pricing" class="btn-primary" style="text-align:center;">
-      Garantir minha vaga — R$97
+      Garantir minha vaga — 12x de R$9
     </a>
   </div>
 
