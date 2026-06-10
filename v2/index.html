@@ -1173,7 +1173,22 @@
     }
     .btn-primary { animation: pulse-pink 2.8s ease-in-out infinite; }
     .btn-primary:hover { animation: none; }
+
+    /* ── VSL LOCK — conteúdo revelado após delay ── */
+    .vsl-locked { display: none !important; }
+
+    /* ── VSL embed vturb ── */
+    .vsl-embed { width: 100%; max-width: 720px; margin: 0 auto var(--space-5); }
   </style>
+  <!-- vturb performance -->
+  <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+  <link rel="preload" href="https://scripts.converteai.net/be67a68d-ae01-4857-8fc1-00001f33298b/ab-test/6a28d670f75238aac56f7c78/player.js" as="script">
+  <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+  <link rel="dns-prefetch" href="https://cdn.converteai.net">
+  <link rel="dns-prefetch" href="https://scripts.converteai.net">
+  <link rel="dns-prefetch" href="https://images.converteai.net">
+  <link rel="dns-prefetch" href="https://m3u8.vturb.net">
+  <link rel="dns-prefetch" href="https://license.vturb.com">
 </head>
 <body>
 
@@ -1199,18 +1214,10 @@
         Assista o vídeo abaixo para conhecer
       </p>
 
-      <!-- VSL -->
-      <div class="vsl-box">
-        <div class="vsl-ratio">
-          <div class="vsl-placeholder">
-            <div class="vsl-play">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-            <p class="vsl-caption">Assista ao vídeo de apresentação</p>
-          </div>
-          <!-- Para ativar: substitua o vsl-placeholder pelo iframe abaixo -->
-          <!-- <iframe src="SEU_LINK_VIDEO" allowfullscreen></iframe> -->
-        </div>
+      <!-- VSL vturb -->
+      <div class="vsl-embed">
+        <vturb-smartplayer id="ab-6a28d670f75238aac56f7c78" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>
+        <script type="text/javascript">var s=document.createElement("script");s.src="https://scripts.converteai.net/be67a68d-ae01-4857-8fc1-00001f33298b/ab-test/6a28d670f75238aac56f7c78/player.js",s.async=!0,document.head.appendChild(s);</script>
       </div>
 
       <!-- Event info -->
@@ -1221,18 +1228,13 @@
         <div class="event-info-item"><span class="emoji">🔒</span> Acesso seguro</div>
       </div>
 
-      <!-- CTA -->
-      <div class="cta-group">
-        <a href="#pricing" class="btn-primary">Quero garantir meu ingresso</a>
-        <p class="microcopy">Vagas limitadas para esta edição.</p>
-      </div>
     </div>
   </section>
 
   <!-- ══════════════════════════════════════
        SESSÃO 2 — PROVAS E VALIDAÇÃO
   ══════════════════════════════════════ -->
-  <section class="social-proof">
+  <section class="social-proof vsl-locked">
     <div class="container-lg">
       <div class="section-icon-accent">
         <div class="section-icon-bubble">⭐</div>
@@ -1326,7 +1328,7 @@
   <!-- ══════════════════════════════════════
        SESSÃO 3 — O PROBLEMA
   ══════════════════════════════════════ -->
-  <section class="problem-section">
+  <section class="problem-section vsl-locked">
     <div class="container" style="text-align:center;">
       <!-- Ícone decorativo da seção -->
       <div class="section-icon-accent">
@@ -1369,7 +1371,7 @@
   <!-- ══════════════════════════════════════
        SESSÃO 4 — O QUE VOCÊ VAI DESCOBRIR
   ══════════════════════════════════════ -->
-  <section class="discover-section">
+  <section class="discover-section vsl-locked">
     <div class="container-lg">
       <div style="text-align:center;margin-bottom:48px;">
         <!-- Ícone decorativo -->
@@ -1430,7 +1432,7 @@
   <!-- ══════════════════════════════════════
        SESSÃO 6 — PARA QUEM É
   ══════════════════════════════════════ -->
-  <section class="forwhom-section">
+  <section class="forwhom-section vsl-locked">
     <div class="container-lg">
       <div style="text-align:center;margin-bottom:40px;">
         <div class="section-icon-accent">
@@ -1464,7 +1466,7 @@
   <!-- ══════════════════════════════════════
        SESSÃO 7 — O QUE VOCÊ RECEBE
   ══════════════════════════════════════ -->
-  <section class="bonus-section">
+  <section class="bonus-section vsl-locked">
     <div class="container">
       <div style="text-align:center;margin-bottom:40px;">
         <div class="section-icon-accent">
@@ -1524,7 +1526,7 @@
   <!-- ══════════════════════════════════════
        SESSÃO 8 — INVESTIMENTO
   ══════════════════════════════════════ -->
-  <section class="pricing-section" id="pricing">
+  <section class="pricing-section vsl-locked" id="pricing">
     <div class="container">
       <!-- Ícone decorativo -->
       <div class="section-icon-accent">
@@ -1579,7 +1581,7 @@
   <!-- ══════════════════════════════════════
        SESSÃO 9 — CONVERSA SÉRIA
   ══════════════════════════════════════ -->
-  <section class="serious-section">
+  <section class="serious-section vsl-locked">
     <div class="container">
       <p class="section-badge">Uma Decisão Simples</p>
       <h2 class="section-headline" style="max-width:480px;margin:0 auto 24px;">A decisão é simples.</h2>
@@ -1604,7 +1606,7 @@
   <!-- ══════════════════════════════════════
        SESSÃO 10 — SOBRE O ESPECIALISTA
   ══════════════════════════════════════ -->
-  <section class="expert-section">
+  <section class="expert-section vsl-locked">
     <div class="container">
       <div style="text-align:center;margin-bottom:40px;">
         <p class="section-badge">Quem Vai Conduzir</p>
@@ -1634,7 +1636,7 @@
   <!-- ══════════════════════════════════════
        SESSÃO 11 — FAQ
   ══════════════════════════════════════ -->
-  <section class="faq-section">
+  <section class="faq-section vsl-locked">
     <div class="container">
       <div style="text-align:center;margin-bottom:48px;">
         <p class="section-badge">Dúvidas Frequentes</p>
@@ -1712,7 +1714,7 @@
   <!-- ══════════════════════════════════════
        CTA FINAL
   ══════════════════════════════════════ -->
-  <section class="cta-final">
+  <section class="cta-final vsl-locked">
     <div class="container">
       <h2 class="cta-final-headline">
         Você pode continuar fazendo o que sempre fez...<br>
@@ -1743,13 +1745,20 @@
   </section>
 
   <!-- FLOATING CTA -->
-  <div class="floating-cta" id="floatingCta">
+  <div class="floating-cta vsl-locked" id="floatingCta">
     <a href="#pricing" class="btn-primary" style="text-align:center;">
       Garantir minha vaga — 12x de R$9
     </a>
   </div>
 
   <script>
+    // Revelar conteúdo abaixo da VSL após 16min10s
+    setTimeout(function() {
+      document.querySelectorAll('.vsl-locked').forEach(function(el) {
+        el.classList.remove('vsl-locked');
+      });
+    }, 970000);
+
     // FAQ accordion
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
