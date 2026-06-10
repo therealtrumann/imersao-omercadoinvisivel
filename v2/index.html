@@ -1178,7 +1178,7 @@
     .vsl-locked { display: none !important; }
 
     /* ── VSL embed vturb ── */
-    .vsl-embed { width: 100%; max-width: 720px; margin: 0 auto var(--space-5); }
+    .vsl-embed { width: calc(100% + min(80px, 8vw)); margin-left: calc(-1 * min(40px, 4vw)); margin-right: calc(-1 * min(40px, 4vw)); margin-bottom: var(--space-5); }
   </style>
   <!-- vturb performance -->
   <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
@@ -1221,7 +1221,7 @@
       </div>
 
       <!-- Event info -->
-      <div class="event-info">
+      <div class="event-info vsl-locked">
         <div class="event-info-item"><span class="emoji">📅</span> Quinta, 18 de junho</div>
         <div class="event-info-item"><span class="emoji">🕒</span> 20h (horário de Brasília)</div>
         <div class="event-info-item"><span class="emoji">🌎</span> 100% Online</div>
