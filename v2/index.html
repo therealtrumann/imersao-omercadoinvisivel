@@ -1178,7 +1178,9 @@
     .vsl-locked { display: none !important; }
 
     /* ── VSL embed vturb ── */
-    .vsl-embed { width: calc(100% + min(80px, 8vw)); margin-left: calc(-1 * min(40px, 4vw)); margin-right: calc(-1 * min(40px, 4vw)); margin-bottom: var(--space-5); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 0 0 1px var(--border-pink); }
+    .vsl-embed { width: calc(100% + min(80px, 8vw)); margin-left: calc(-1 * min(40px, 4vw)); margin-right: calc(-1 * min(40px, 4vw)); margin-bottom: var(--space-4); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 0 0 1px var(--border-pink); }
+    .vsl-testimonials { display: flex; flex-direction: column; gap: 10px; width: 100%; margin-bottom: var(--space-5); }
+    .vsl-testimonials img { width: 100%; border-radius: 10px; display: block; }
     @media (max-width: 599px) {
       .vsl-embed { width: calc(100% + 16px); margin-left: -8px; margin-right: -8px; }
       .header-bar { padding: 10px 16px; }
@@ -1220,6 +1222,13 @@
       <div class="vsl-embed">
         <vturb-smartplayer id="ab-6a28d670f75238aac56f7c78" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>
         <script type="text/javascript">var s=document.createElement("script");s.src="https://scripts.converteai.net/be67a68d-ae01-4857-8fc1-00001f33298b/ab-test/6a28d670f75238aac56f7c78/player.js",s.async=!0,document.head.appendChild(s);</script>
+      </div>
+
+      <!-- Depoimentos abaixo da VSL -->
+      <div class="vsl-testimonials">
+        <img src="../depoimentovsl1.jpeg" alt="Depoimento" loading="lazy">
+        <img src="../depoimentovsl2.jpeg" alt="Depoimento" loading="lazy">
+        <img src="../depoimentovsl3.jpeg" alt="Depoimento" loading="lazy">
       </div>
 
       <!-- Event info -->
