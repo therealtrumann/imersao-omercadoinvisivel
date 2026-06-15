@@ -1191,7 +1191,6 @@
     .btn-primary:hover { animation: none; }
 
     /* ── VSL LOCK — conteúdo revelado após delay ── */
-    .vsl-locked { display: none !important; }
 
     /* ── VSL embed vturb ── */
     .vsl-embed { width: calc(100% + min(80px, 8vw)); margin-left: calc(-1 * min(40px, 4vw)); margin-right: calc(-1 * min(40px, 4vw)); margin-bottom: var(--space-4); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 0 0 1px var(--border-pink); }
@@ -1240,7 +1239,7 @@
       </div>
 
       <!-- Event info -->
-      <div class="event-info vsl-locked">
+      <div class="event-info">
         <div class="event-info-item"><span class="emoji">📅</span> Quinta, 18 de junho</div>
         <div class="event-info-item"><span class="emoji">🕒</span> 20h (horário de Brasília)</div>
         <div class="event-info-item"><span class="emoji">🌎</span> 100% Online</div>
@@ -1253,7 +1252,7 @@
   <!-- ══════════════════════════════════════
        SESSÃO 2 — PROVAS E VALIDAÇÃO
   ══════════════════════════════════════ -->
-  <section class="social-proof vsl-locked">
+  <section class="social-proof">
     <div class="container-lg">
       <div class="section-icon-accent">
         <div class="section-icon-bubble">⭐</div>
@@ -1347,7 +1346,7 @@
   <!-- ══════════════════════════════════════
        SESSÃO 3 — O PROBLEMA
   ══════════════════════════════════════ -->
-  <section class="problem-section vsl-locked">
+  <section class="problem-section">
     <div class="container" style="text-align:center;">
       <!-- Ícone decorativo da seção -->
       <div class="section-icon-accent">
@@ -1390,7 +1389,7 @@
   <!-- ══════════════════════════════════════
        SESSÃO 4 — O QUE VOCÊ VAI DESCOBRIR
   ══════════════════════════════════════ -->
-  <section class="discover-section vsl-locked">
+  <section class="discover-section">
     <div class="container-lg">
       <div style="text-align:center;margin-bottom:48px;">
         <!-- Ícone decorativo -->
@@ -1451,7 +1450,7 @@
   <!-- ══════════════════════════════════════
        SESSÃO 6 — PARA QUEM É
   ══════════════════════════════════════ -->
-  <section class="forwhom-section vsl-locked">
+  <section class="forwhom-section">
     <div class="container-lg">
       <div style="text-align:center;margin-bottom:40px;">
         <div class="section-icon-accent">
@@ -1485,7 +1484,7 @@
   <!-- ══════════════════════════════════════
        SESSÃO 7 — O QUE VOCÊ RECEBE
   ══════════════════════════════════════ -->
-  <section class="bonus-section vsl-locked">
+  <section class="bonus-section">
     <div class="container">
       <div style="text-align:center;margin-bottom:40px;">
         <div class="section-icon-accent">
@@ -1545,7 +1544,7 @@
   <!-- ══════════════════════════════════════
        SESSÃO 8 — INVESTIMENTO
   ══════════════════════════════════════ -->
-  <section class="pricing-section vsl-locked" id="pricing">
+  <section class="pricing-section" id="pricing">
     <div class="container">
       <!-- Ícone decorativo -->
       <div class="section-icon-accent">
@@ -1600,7 +1599,7 @@
   <!-- ══════════════════════════════════════
        SESSÃO 9 — CONVERSA SÉRIA
   ══════════════════════════════════════ -->
-  <section class="serious-section vsl-locked">
+  <section class="serious-section">
     <div class="container">
       <p class="section-badge">Uma Decisão Simples</p>
       <h2 class="section-headline" style="max-width:480px;margin:0 auto 24px;">A decisão é simples.</h2>
@@ -1625,7 +1624,7 @@
   <!-- ══════════════════════════════════════
        SESSÃO 10 — SOBRE O ESPECIALISTA
   ══════════════════════════════════════ -->
-  <section class="expert-section vsl-locked">
+  <section class="expert-section">
     <div class="container">
       <div style="text-align:center;margin-bottom:40px;">
         <p class="section-badge">Quem Vai Conduzir</p>
@@ -1655,7 +1654,7 @@
   <!-- ══════════════════════════════════════
        SESSÃO 11 — FAQ
   ══════════════════════════════════════ -->
-  <section class="faq-section vsl-locked">
+  <section class="faq-section">
     <div class="container">
       <div style="text-align:center;margin-bottom:48px;">
         <p class="section-badge">Dúvidas Frequentes</p>
@@ -1733,7 +1732,7 @@
   <!-- ══════════════════════════════════════
        CTA FINAL
   ══════════════════════════════════════ -->
-  <section class="cta-final vsl-locked">
+  <section class="cta-final">
     <div class="container">
       <h2 class="cta-final-headline">
         Você pode continuar fazendo o que sempre fez...<br>
@@ -1764,7 +1763,7 @@
   </section>
 
   <!-- FLOATING CTA -->
-  <div class="floating-cta vsl-locked" id="floatingCta">
+  <div class="floating-cta" id="floatingCta">
     <a href="#pricing" class="btn-primary" style="text-align:center;">
       Garantir minha vaga — 12x de R$9
     </a>
@@ -1780,13 +1779,6 @@
       var days = ['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
       el.textContent = d.getDate() + ' de ' + months[d.getMonth()] + ', ' + days[d.getDay()];
     })();
-
-    // Revelar conteúdo abaixo da VSL após 16min10s
-    setTimeout(function() {
-      document.querySelectorAll('.vsl-locked').forEach(function(el) {
-        el.classList.remove('vsl-locked');
-      });
-    }, 1135000);
 
     // FAQ accordion
     document.querySelectorAll('.faq-question').forEach(btn => {
