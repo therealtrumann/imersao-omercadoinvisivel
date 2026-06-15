@@ -82,20 +82,20 @@
 
     /* ── HEADER BAR ── */
     .header-bar {
-      background: linear-gradient(135deg, var(--pink) 0%, #C4006F 100%);
+      background: linear-gradient(135deg, #DC2626 0%, #991b1b 100%);
       text-align: center;
-      padding: 16px 20px;
+      padding: 13px 20px;
       font-size: clamp(12px, 2.8vw, 14px);
-      font-weight: 700;
-      letter-spacing: 0.3px;
+      font-weight: 600;
+      letter-spacing: 0;
       line-height: 1.5;
-      box-shadow: 0 4px 24px var(--pink-glow);
+      box-shadow: 0 2px 12px rgba(220,38,38,0.4);
     }
 
     /* ── NAVBAR ── */
     /* ── HERO ── */
     .hero {
-      padding: 48px 0 56px;
+      padding: 22px 0 20px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -126,7 +126,7 @@
 
     .hero-headline {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(25px, 7.5vw, 44px);
+      font-size: clamp(19px, 5.5vw, 44px);
       font-weight: 800;
       line-height: 1.2;
       margin-bottom: var(--space-3);
@@ -1179,8 +1179,6 @@
 
     /* ── VSL embed vturb ── */
     .vsl-embed { width: calc(100% + min(80px, 8vw)); margin-left: calc(-1 * min(40px, 4vw)); margin-right: calc(-1 * min(40px, 4vw)); margin-bottom: var(--space-4); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 0 0 1px var(--border-pink); }
-    .vsl-testimonials { display: flex; flex-direction: column; gap: 10px; width: 100%; margin-bottom: var(--space-5); }
-    .vsl-testimonials img { width: 100%; border-radius: 10px; display: block; }
     @media (max-width: 599px) {
       .vsl-embed { width: calc(100% + 16px); margin-left: -8px; margin-right: -8px; }
       .header-bar { padding: 10px 16px; }
@@ -1200,7 +1198,7 @@
 
   <!-- HEADER BAR -->
   <div class="header-bar">
-    Exclusivo para mulheres que buscam uma nova fonte de renda trabalhando de casa
+    ⚠️ <strong>Atenção:</strong> esse vídeo sairá do ar em <strong id="alertDate"></strong>
   </div>
 
   <!-- ══════════════════════════════════════
@@ -1222,13 +1220,6 @@
       <div class="vsl-embed">
         <vturb-smartplayer id="ab-6a28d670f75238aac56f7c78" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>
         <script type="text/javascript">var s=document.createElement("script");s.src="https://scripts.converteai.net/be67a68d-ae01-4857-8fc1-00001f33298b/ab-test/6a28d670f75238aac56f7c78/player.js",s.async=!0,document.head.appendChild(s);</script>
-      </div>
-
-      <!-- Depoimentos abaixo da VSL -->
-      <div class="vsl-testimonials">
-        <img src="depoimentovsl1.jpeg" alt="Depoimento" loading="lazy">
-        <img src="depoimentovsl2.jpeg" alt="Depoimento" loading="lazy">
-        <img src="depoimentovsl3.jpeg" alt="Depoimento" loading="lazy">
       </div>
 
       <!-- Event info -->
@@ -1763,6 +1754,16 @@
   </div>
 
   <script>
+    // Data dinâmica na barra de urgência
+    (function(){
+      var el = document.getElementById('alertDate');
+      if (!el) return;
+      var d = new Date();
+      var months = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+      var days = ['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
+      el.textContent = d.getDate() + ' de ' + months[d.getMonth()] + ', ' + days[d.getDay()];
+    })();
+
     // Revelar conteúdo abaixo da VSL após 16min10s
     setTimeout(function() {
       document.querySelectorAll('.vsl-locked').forEach(function(el) {
