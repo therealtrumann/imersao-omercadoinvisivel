@@ -145,7 +145,22 @@
       color: var(--white-80);
       line-height: 1.75;
       max-width: 560px;
-      margin: 0 auto var(--space-5);
+      margin: 0 auto 10px;
+    }
+
+    .hero-arrow {
+      display: block;
+      width: 16px; height: 16px;
+      border-right: 2px solid var(--pink);
+      border-bottom: 2px solid var(--pink);
+      transform: rotate(45deg) translate(0,0);
+      margin: 0 auto var(--space-4);
+      opacity: 0.65;
+      animation: arrowBounce 1.5s ease-in-out infinite;
+    }
+    @keyframes arrowBounce {
+      0%, 100% { transform: rotate(45deg) translate(0,0); opacity: 0.65; }
+      50%       { transform: rotate(45deg) translate(3px,3px); opacity: 1; }
     }
 
     /* VSL */
@@ -1215,6 +1230,7 @@
       <p class="hero-sub">
         Assista o vídeo abaixo para conhecer
       </p>
+      <div class="hero-arrow"></div>
 
       <!-- VSL vturb -->
       <div class="vsl-embed">
